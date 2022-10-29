@@ -1,0 +1,7 @@
+package com.odirlei.bolao.model;
+
+public class User {
+
+	private Long id;
+	private String nome;
+}

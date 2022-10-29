@@ -1,0 +1,7 @@
+package com.odirlei.bolao.domain;
+
+public class Bolao {
+
+	private int id;
+	private var
+}
