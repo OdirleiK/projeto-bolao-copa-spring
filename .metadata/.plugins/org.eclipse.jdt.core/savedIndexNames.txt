@@ -11,9 +11,9 @@ INDEX VERSION 1.131+C:\Users\odirl\OneDrive\Documentos\projeto-wise-final\.metad
 1441957480.index
 183087263.index
 2880108434.index
-2418020652.index
-4288970577.index
 2791950238.index
+4288970577.index
+2418020652.index
 1715770258.index
 2604396480.index
 3822895694.index
@@ -75,9 +75,9 @@ INDEX VERSION 1.131+C:\Users\odirl\OneDrive\Documentos\projeto-wise-final\.metad
 1696130468.index
 282056702.index
 980718394.index
-1882902808.index
-1887460481.index
 24674164.index
+1887460481.index
+1882902808.index
 2292760823.index
 4010403187.index
 1552532191.index

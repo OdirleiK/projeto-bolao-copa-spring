@@ -1,0 +1,22 @@
+package com.odirlei.bolao.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.odirlei.bolao.entities.Bolao;
+import com.odirlei.bolao.repositories.BolaoRepository;
+
+@Service
+public class BolaoService {
+	
+	@Autowired
+	private BolaoRepository repository;
+	
+	@Transactional
+	public List<Bolao> findAll() {
+		return repository.findAll();
+	}
+}

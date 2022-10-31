@@ -1,0 +1,7 @@
+package com.odirlei.bolao.resources.exceptions;
+
+public class StandardError {
+	
+	private Instant time
+
+}

@@ -1,0 +1,18 @@
+package com.odirlei.bolao.services;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.odirlei.bolao.entities.Bolao;
+import com.odirlei.bolao.repositories.BolaoRepository;
+
+@Service
+public class BolaoService {
+	
+	private BolaoRepository repository;
+	
+	public List<Bolao> findAll() {
+		
+	}
+}

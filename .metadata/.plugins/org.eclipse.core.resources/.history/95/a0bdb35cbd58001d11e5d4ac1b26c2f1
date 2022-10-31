@@ -1,0 +1,5 @@
+package com.odirlei.bolao.repositories;
+
+public interface BolaoRepository extends{
+
+}

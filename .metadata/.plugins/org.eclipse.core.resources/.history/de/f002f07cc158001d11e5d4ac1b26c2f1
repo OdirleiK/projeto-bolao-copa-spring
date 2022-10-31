@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:h2:mem:0fdf386a-ecea-4ce8-a544-658e5f65ca92
+spring.datasource.username=sa
+spring.datasource.password=
+
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console

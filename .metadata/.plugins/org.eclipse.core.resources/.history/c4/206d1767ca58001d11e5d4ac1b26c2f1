@@ -1,0 +1,13 @@
+package com.odirlei.bolao.dto;
+
+public class BolaoDTO {
+
+	private Long id;
+	private String nome;
+	private String descricao;
+	private int ativo;
+	
+	public BolaoDTO() {}
+	
+	
+}

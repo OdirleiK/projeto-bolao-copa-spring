@@ -3,21 +3,35 @@ package com.odirlei.bolao.entities;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "bolao")
 public class Bolao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
-	private String description;
+	private String nome;
+	private String descricao;
+	private Integer ativo;
+	
 	
 	public Bolao() {}
 
 	public Bolao(Long id, String name, String description) {
 		this.id = id;
-		this.name = name;
-		this.description = description;
+		this.nome = name;
+		this.descricao = description;
 	}
 
+	@Column
 	public Long getId() {
 		return id;
 	}
@@ -26,27 +40,37 @@ public class Bolao implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String name) {
+		this.nome = name;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescricao(String description) {
+		this.descricao = description;
 	}
 
+
+	public int getAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(int ativo) {
+		this.ativo = ativo;
+	}
+
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
