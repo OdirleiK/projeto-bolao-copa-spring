@@ -1,0 +1,9 @@
+package com.odirlei.bolao.dto;
+
+import java.io.Serializable;
+
+public class TimeDTO implements Serializable {
+	private static final long serialVersionUID = 1L; 
+	
+	
+}

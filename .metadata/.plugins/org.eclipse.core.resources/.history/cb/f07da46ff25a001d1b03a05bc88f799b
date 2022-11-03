@@ -1,0 +1,14 @@
+package com.odirlei.bolao.config;
+
+public class SecurityConfig {
+
+	@Configuration
+	@EnableWebSecurity
+	public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+		@Override
+		public void configure(WebSecurity web) throws Exception {
+			web.ignoring().antMatchers("/**");
+		}
+	}
+}

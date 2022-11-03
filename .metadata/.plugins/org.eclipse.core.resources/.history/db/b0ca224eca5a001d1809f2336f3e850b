@@ -1,0 +1,5 @@
+package com.odirlei.bolao.dto;
+
+public class UserInsertDTO {
+
+}

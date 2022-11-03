@@ -1,0 +1,8 @@
+package com.odirlei.bolao.dto;
+
+public class UserInsertDTO extends UserDTO{
+	
+	private String senha;
+
+}
+

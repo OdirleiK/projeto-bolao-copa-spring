@@ -1,0 +1,11 @@
+package com.odirlei.bolao.dto;
+
+public class RoleDTO {
+
+	private Long id;
+	private String authority;
+	
+	public RoleDTO() {}
+	
+	
+}

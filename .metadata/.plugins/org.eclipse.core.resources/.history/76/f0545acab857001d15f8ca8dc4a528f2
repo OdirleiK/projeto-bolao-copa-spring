@@ -1,7 +1,0 @@
-package com.odirlei.bolao.entities;
-
-public class Bolao {
-	
-	private Long id;
-	
-}

@@ -1,9 +1,0 @@
-package com.odirlei.bolao.resources.exceptions;
-
-import org.springframework.web.bind.annotation.ControllerAdvice;
-
-@ControllerAdvice
-public class ResourceExpectionHandler {
-
-	public 
-}

@@ -1,0 +1,5 @@
+package com.odirlei.bolao.resources.exceptions;
+
+public class ValidationError  extends StandardError{
+
+}

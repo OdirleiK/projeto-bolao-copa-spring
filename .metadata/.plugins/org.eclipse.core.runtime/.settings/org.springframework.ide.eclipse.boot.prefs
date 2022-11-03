@@ -1,8 +1,8 @@
 eclipse.preferences.version=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.data-jpa=3
 org.springframework.ide.eclipse.boot.wizard.PopularityTracker.h2=1
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=2
-org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=1
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.mysql=4
+org.springframework.ide.eclipse.boot.wizard.PopularityTracker.web=3
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.artifactId=bolao
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.bootVersion=2.7.5
 org.springframework.ide.eclipse.boot.wizard.PreferredSelections.description=Projeto bol\u00E3o copa do mundo 

@@ -1,0 +1,12 @@
+package com.odirlei.bolao.entities;
+
+public class Jogo {
+
+	private Long id;
+	private Instante 
+	private Integer time_id1;
+	private Integer time_id2;
+	private Integer bolao_id;
+	private Integer resultado_idResultado;
+
+}

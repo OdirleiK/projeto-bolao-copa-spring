@@ -1,0 +1,13 @@
+package com.odirlei.bolao.services;
+
+import org.springframework.stereotype.Service;
+
+import com.odirlei.bolao.repositories.TimeRepository;
+
+@Service
+public class TimeService {
+	
+	private TimeRepository repository;
+	
+	
+}

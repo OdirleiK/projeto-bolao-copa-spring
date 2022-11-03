@@ -1,0 +1,35 @@
+package com.odirlei.bolao.entities;
+
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
+
+public class Jogo {
+
+	private Long id;
+	private Instant data;
+	private Integer time_id1;
+	private Integer time_id2;
+	private Integer bolao_id;
+	private Integer resultado_idResultado;
+	
+	Set<Bolao> bolao = new HashSet<>();
+	
+	
+	public Jogo() {}
+
+
+	public Jogo(Long id, Instant data, Integer time_id1, Integer time_id2, Integer bolao_id,
+			Integer resultado_idResultado) {
+		super();
+		this.id = id;
+		this.data = data;
+		this.time_id1 = time_id1;
+		this.time_id2 = time_id2;
+		this.bolao_id = bolao_id;
+		this.resultado_idResultado = resultado_idResultado;
+	}
+	
+	
+
+}

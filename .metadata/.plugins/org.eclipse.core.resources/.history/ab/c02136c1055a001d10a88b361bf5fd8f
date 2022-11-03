@@ -1,0 +1,19 @@
+package com.odirlei.bolao.resources;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.odirlei.bolao.services.ResultadoService;
+
+@RestController
+@RequestMapping(value = "/resultado")
+public class ResultadoResource {
+	
+	@Autowired
+	private ResultadoService service;
+	
+	public ResponseE
+	
+
+}

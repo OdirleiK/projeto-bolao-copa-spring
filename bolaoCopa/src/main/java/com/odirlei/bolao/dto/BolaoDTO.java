@@ -2,13 +2,22 @@ package com.odirlei.bolao.dto;
 
 import java.io.Serializable;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import com.odirlei.bolao.entities.Bolao;
 
 public class BolaoDTO implements Serializable {
 	private static final long serialVersionUID = 1L; 
 
 	private Long id;
+	
+	@Size(min = 5)
+	@NotBlank
 	private String nome;
+	
+	@Size(min = 5)
+	@NotBlank
 	private String descricao;
 	private Integer ativo;
 	

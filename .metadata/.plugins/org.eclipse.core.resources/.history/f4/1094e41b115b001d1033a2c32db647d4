@@ -1,0 +1,8 @@
+package com.odirlei.bolao.resources.exceptions;
+
+import java.util.ArrayList;
+
+public class ValidationError  extends StandardError{
+
+	private List<FieldMessage> errors = new ArrayList<>();
+}

@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "bolao")
+@Table(name = "tb_bolao")
 public class Bolao implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
@@ -58,7 +58,7 @@ public class Bolao implements Serializable {
 
 
 	public int getAtivo() {
-		return ativo;
+		return  ativo;
 	}
 
 	public void setAtivo(int ativo) {

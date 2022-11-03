@@ -1,0 +1,8 @@
+package com.odirlei.bolao.entities;
+
+public class Time {
+	
+	private Integer id;
+	
+
+}
