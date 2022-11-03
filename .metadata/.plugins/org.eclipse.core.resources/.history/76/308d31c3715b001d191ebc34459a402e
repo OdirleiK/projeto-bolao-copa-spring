@@ -1,0 +1,5 @@
+package com.odirlei.bolao.config;
+
+public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter{
+
+}
