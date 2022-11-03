@@ -1,5 +1,8 @@
 package com.odirlei.bolao.dto;
 
+import com.odirlei.bolao.services.validation.UserInsertValid;
+
+@UserInsertValid
 public class UserInsertDTO extends UserDTO{
 	private static final long serialVersionUID = 1L;
 	

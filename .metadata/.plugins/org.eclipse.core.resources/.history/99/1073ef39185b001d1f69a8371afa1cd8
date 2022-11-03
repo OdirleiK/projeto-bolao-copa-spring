@@ -1,0 +1,6 @@
+package com.odirlei.bolao.services.validation;
+
+public class UserInsertValidator {
+
+	
+}
