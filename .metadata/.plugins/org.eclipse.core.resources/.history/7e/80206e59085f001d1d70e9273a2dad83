@@ -1,0 +1,13 @@
+package com.odirlei.bolao.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_palpite")
+public class Palpite implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+}

@@ -1,0 +1,13 @@
+package com.odirlei.bolao.consumers;
+
+import org.springframework.stereotype.Component;
+
+import com.odirlei.bolao.services.EmailService;
+
+@Component
+public class EmailConsumer {
+	
+	@Autowired
+	EmailService emailService;
+
+}

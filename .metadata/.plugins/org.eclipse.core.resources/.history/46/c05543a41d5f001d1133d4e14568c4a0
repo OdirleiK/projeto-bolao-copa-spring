@@ -1,0 +1,7 @@
+package com.odirlei.bolao.repositories;
+
+import com.odirlei.bolao.entities.Palpite;
+
+public class PalpiteRepository extends JpaRepository<Palpite, Long> {
+
+}

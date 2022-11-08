@@ -1,0 +1,28 @@
+package com.odirlei.bolao.util;
+
+import java.util.Locale;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class Message {
+
+	private String message;
+
+	public Message() {}
+	
+	public Message(String message) {
+		super();
+		this.message = message;
+	}
+
+	public String getMessage(String string, Object object, Locale locale) {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
+	
+}

@@ -1,0 +1,6 @@
+package com.odirlei.bolao.services;
+
+@Service
+public class JogoService {
+
+}

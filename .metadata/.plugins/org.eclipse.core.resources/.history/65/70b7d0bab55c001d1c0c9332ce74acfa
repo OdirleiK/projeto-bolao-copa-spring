@@ -1,0 +1,5 @@
+package com.odirlei.bolao.consumers;
+
+public class EmailConsumer {
+
+}

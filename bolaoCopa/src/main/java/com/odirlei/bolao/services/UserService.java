@@ -1,5 +1,6 @@
 package com.odirlei.bolao.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -11,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -22,8 +25,12 @@ import com.odirlei.bolao.dto.RoleDTO;
 import com.odirlei.bolao.dto.UserDTO;
 import com.odirlei.bolao.dto.UserInsertDTO;
 import com.odirlei.bolao.dto.UserUpdateDTO;
+import com.odirlei.bolao.entities.Email;
+import com.odirlei.bolao.entities.PasswordResetToken;
 import com.odirlei.bolao.entities.Role;
 import com.odirlei.bolao.entities.User;
+import com.odirlei.bolao.enums.StatusEmail;
+import com.odirlei.bolao.repositories.PasswordTokenRepository;
 import com.odirlei.bolao.repositories.RoleRepository;
 import com.odirlei.bolao.repositories.UserRepository;
 import com.odirlei.bolao.services.exceptions.DatabaseException;
@@ -43,6 +50,12 @@ public class UserService implements UserDetailsService {
 	@Autowired
 	private RoleRepository roleRepository;
 	
+	@Autowired
+	private JavaMailSender emailSender;	
+	
+	@Autowired
+	private PasswordTokenRepository passwordRepository;
+	
 	@Transactional(readOnly = true)
 	public List<UserDTO> findAll() {
 		List<User> list =  repository.findAll();
@@ -58,13 +71,32 @@ public class UserService implements UserDetailsService {
 
 	@Transactional
 	public UserDTO insert(UserInsertDTO dto) {
+		Email email = new Email();
 		User entity = new User();
+		SimpleMailMessage message = new SimpleMailMessage();
+		
+		Role role = roleRepository.findById((long) 1).get(); 
+		
+		
 		copyDtoToEntity(dto, entity);
+		
 		entity.setSenha(passwordEncoder.encode(dto.getSenha()));
+		
+		email.setSendDateEmail(LocalDateTime.now());
+		message.setFrom("odirlei47777@gmail.com");
+		message.setTo(entity.getEmail());
+		message.setSubject("Bolao Copa do mundo | nao responda");
+		message.setText("Ola " + entity.getNome() + " Seja muito bem vindo ao nosso bolão, chame seus amigos e se divirta");
+		emailSender.send(message);
+		email.setStatusEmail(StatusEmail.SENT);
+		
+	
+		entity.getRoles().add(role);
 		entity = repository.save(entity);
 		return new UserDTO(entity);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Transactional
 	public UserDTO update(Long id, UserUpdateDTO dto) {
 		try {
@@ -77,7 +109,8 @@ public class UserService implements UserDetailsService {
 			throw new ResourceNotFoundException("Id not found" + id);
 		}
 	}
-
+	
+	@Transactional
 	public void delete(Long id) {
 		try {
 			repository.deleteById(id);
@@ -90,6 +123,40 @@ public class UserService implements UserDetailsService {
 		}
 	}	
 	
+	public UserDTO findByEmail(String email) {
+		User entity = repository.findByEmail(email);
+		return new UserDTO(entity);
+	}
+	
+	public void createPasswordResetTokenForUser(User user, String token) {
+	    PasswordResetToken myToken = new PasswordResetToken(token, user);
+	    passwordRepository.save(myToken);
+	}
+	
+	@Transactional
+	public SimpleMailMessage constructResetTokenEmail(String token, User user) {
+		String url = "/users/changePasswor?token=" + token;
+		Email email = new Email();
+		SimpleMailMessage message = new SimpleMailMessage();
+		
+		email.setSendDateEmail(LocalDateTime.now());
+		message.setFrom("odirlei47777@gmail.com");
+		message.setTo(user.getEmail());
+		message.setSubject("Bolao Copa do mundo | Redefinir Senha");
+		message.setText("Ola " + user.getNome() + " Seu link para redefinir a sua senha: " + url);
+		emailSender.send(message);
+		email.setStatusEmail(StatusEmail.SENT);
+		
+		return null;
+	}
+	
+	public void changePassword(String novaSenha, Long id) {
+		User user = this.repository.findById(id).get();
+		user.setSenha(passwordEncoder.encode(novaSenha));
+		repository.save(user);
+	}
+	
+	@SuppressWarnings("deprecation")
 	public void copyDtoToEntity(UserDTO dto, User entity) {
 		entity.setNome(dto.getNome());
 		entity.setSobrenome(dto.getSobrenome());
@@ -113,4 +180,12 @@ public class UserService implements UserDetailsService {
 		logger.info("User found:" + username);
 		return user;
 	}
+
+
+	
+
+
+
+
+	
 }

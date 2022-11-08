@@ -1,0 +1,26 @@
+package com.odirlei.bolao.resources;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.odirlei.bolao.services.EmailService;
+import com.odirlei.bolao.services.UserService;
+
+@RestController
+@RequestMapping(value = "/password")
+public class PasswordResource {
+
+	@Autowired
+	private UserService userService;
+
+	@Autowired
+	private EmailService emailService;
+
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+	
+	public 
+}

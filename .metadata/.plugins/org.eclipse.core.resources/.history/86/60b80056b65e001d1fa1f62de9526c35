@@ -1,0 +1,8 @@
+package com.odirlei.bolao.util;
+
+public class Message {
+
+	private String message;
+	
+	
+}

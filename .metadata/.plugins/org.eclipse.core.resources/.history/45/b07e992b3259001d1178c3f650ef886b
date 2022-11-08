@@ -1,5 +1,0 @@
-package com.odirlei.bolao.services.exceptions;
-
-public class EntityNotFoundException extends RuntimeException {
-	
-}

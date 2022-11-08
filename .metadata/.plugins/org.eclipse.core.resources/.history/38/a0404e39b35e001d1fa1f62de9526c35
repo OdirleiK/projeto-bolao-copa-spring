@@ -1,0 +1,19 @@
+package com.odirlei.bolao.dto;
+
+import java.util.Date;
+
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.odirlei.bolao.entities.User;
+
+public class PasswordResetTokenDTO {
+
+	private Long id;
+	private String token;
+	private User user;
+	private Date expiryDate;
+	    
+	   
+}

@@ -31,9 +31,7 @@ public class User  implements UserDetails ,Serializable{
 	private Long id;
 	private String nome;
 	private String sobrenome;
-	
 	private String email;
-	
 	private String senha;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
@@ -45,14 +43,13 @@ public class User  implements UserDetails ,Serializable{
 	public User() {}
 
 
-	public User(Long id, String nome, String sobrenome, String email, String senha) {
+	public User(Long id, String nome, String sobrenome, String email, String senha, String redefinirSenha) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
 		this.senha = senha;
-		
 	}
 
 
@@ -173,6 +170,7 @@ public class User  implements UserDetails ,Serializable{
 	public boolean isEnabled() {
 		return true;
 	}
+
 	
 	
 }

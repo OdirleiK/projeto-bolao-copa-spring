@@ -47,6 +47,7 @@ public class BolaoService {
 		return new BolaoDTO(entity);
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Transactional
 	public BolaoDTO update(Long id, BolaoDTO dto) {
 		try {

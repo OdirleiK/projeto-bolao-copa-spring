@@ -1,0 +1,37 @@
+package com.odirlei.bolao.dto;
+
+import com.odirlei.bolao.entities.Email;
+
+public class EmailDTO {
+
+	
+	private String ownerRef;
+	
+	
+	private String emailFrom;
+	
+	
+	private String emailTo;
+	
+	
+	private String subject;
+
+	
+	private String text;
+	
+	public EmailDTO() {}
+
+	public EmailDTO(String ownerRef, String emailFrom, String emailTo, String subject, String text) {
+		this.ownerRef = ownerRef;
+		this.emailFrom = emailFrom;
+		this.emailTo = emailTo;
+		this.subject = subject;
+		this.text = text;
+	}
+	
+	public EmailDTO(Email entity) {
+		
+	}
+	
+	
+}

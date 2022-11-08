@@ -1,0 +1,20 @@
+package com.odirlei.bolao.services;
+
+import org.springframework.stereotype.Service;
+
+import com.odirlei.bolao.repositories.PasswordTokenRepository;
+
+@Autowired
+
+@Service
+public class PasswordResetTokenService {
+
+	
+	public boolean verifyToken(String token, Long id) {
+		String tokenInDataBase = PasswordTokenRepository.findByUserId(id).getRecoveryToken();
+		if(token != tokenInDataBase) {
+			return false;
+		}
+		return true;
+	}
+}

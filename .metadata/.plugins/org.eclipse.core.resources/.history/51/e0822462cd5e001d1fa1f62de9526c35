@@ -1,0 +1,40 @@
+package com.odirlei.bolao.entities;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tb_jogo")
+public class Jogo implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	private Date data;
+	
+	@ManyToOne(targetEntity = Time.class, fetch = FetchType.EAGER)
+	private Long id_time1;
+	
+	@ManyToOne(targetEntity = Time.class, fetch = FetchType.EAGER)
+	private Long id_time2;
+	
+	@OneToOne(targetEntity = Bolao.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id")
+	private Long id_bolao;
+	
+	@ManyToOne(targetEntity = Resultado.class, fetch = FetchType.EAGER)
+    @JoinColumn(nullable = false, name = "id")
+	private Long resultado_IdResultado;
+}

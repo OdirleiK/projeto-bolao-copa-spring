@@ -1,0 +1,36 @@
+package com.odirlei.bolao.dto;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+public class EmailDTO {
+
+	@NotBlank
+	private String ownerRef;
+	
+	@NotBlank
+	private String emailFrom;
+	
+	@Email
+	@NotBlank
+	private String emailTo;
+	
+	@NotBlank
+	private String Subject;
+
+	@NotBlank
+	private String text;
+	
+	public EmailDTO() {}
+
+	public EmailDTO(String ownerRef, String emailFrom, String emailTo, String subject, String text) {
+		super();
+		this.ownerRef = ownerRef;
+		this.emailFrom = emailFrom;
+		this.emailTo = emailTo;
+		Subject = subject;
+		this.text = text;
+	}
+	
+	
+}

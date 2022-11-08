@@ -1,0 +1,13 @@
+package com.odirlei.bolao.dto;
+
+public class EmailRequestDTO {
+
+	private String email;
+
+	public EmailRequestDTO(String email) {
+		super();
+		this.email = email;
+	}
+	
+	
+}

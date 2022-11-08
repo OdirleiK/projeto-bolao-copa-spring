@@ -1,0 +1,36 @@
+package com.odirlei.bolao.resources;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.odirlei.bolao.entities.User;
+
+public class LoginResource {
+
+	 String email = ServeletU
+     User user = userRepository.findUserByEmail(email);
+
+     if(user == null)
+     {
+         model.addAttribute("error", "We didn't find this user");
+         return "forgotpassword";
+     }
+     PasswordResetToken token = new PasswordResetToken();
+     token.setToken(UUID.randomUUID().toString());
+     token.setUser(user);
+     token.setExpiryDate(30);
+     passwordResetTokenRepository.save(token);
+     
+     Mail mail = new Mail();
+     Map modelObj = new HashMap<>();
+     modelObj.put("token",token);
+     modelObj.put("user", user);
+     String url =
+             request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort();
+     modelObj.put("resetUrl", url + "/resetpassword?token=" + token.getToken());
+     mail.setModel(modelObj);
+     emailService.sendEmail(mail);
+}

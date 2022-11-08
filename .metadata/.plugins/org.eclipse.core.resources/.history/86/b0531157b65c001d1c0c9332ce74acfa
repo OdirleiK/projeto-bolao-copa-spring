@@ -1,0 +1,20 @@
+package com.odirlei.bolao.consumers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.Payload;
+import org.springframework.stereotype.Component;
+
+import com.odirlei.bolao.dto.EmailDTO;
+import com.odirlei.bolao.services.EmailService;
+
+@Component
+public class EmailConsumer {
+	
+	@Autowired
+	private EmailService emailService;
+	
+	public void listen(@Payload EmailDTO emailDTO) {
+		
+	}
+
+}
