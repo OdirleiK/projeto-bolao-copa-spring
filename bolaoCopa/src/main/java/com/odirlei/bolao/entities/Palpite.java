@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +17,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.odirlei.bolao.enums.Resultado;
 
 @Entity
 @Table(name = "tb_palpite")
@@ -37,19 +40,18 @@ public class Palpite implements Serializable {
 	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern= "dd-MM-yyyy HH:mm")
 	private LocalDateTime data_inclusao;
 	
-	@ManyToOne(targetEntity = Resultado.class, fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false, name = "id_idResultado")
-	private Long resultado_IdResultado;
+	@Enumerated(EnumType.STRING)
+	private Resultado resultado;
 
 	public Palpite() {}
 	
-	public Palpite(Long id, Long jogo_id, User usuario_id, LocalDateTime data_inclusao, Long resultado_IdResultado) {
+	public Palpite(Long id, Long jogo_id, User usuario_id, LocalDateTime data_inclusao, Resultado resultado) {
 		super();
 		this.id = id;
 		this.jogo_id = jogo_id;
 		this.usuario_id = usuario_id;
 		this.data_inclusao = data_inclusao;
-		this.resultado_IdResultado = resultado_IdResultado;
+		this.resultado = resultado;
 	}
 
 	public Long getId() {
@@ -84,15 +86,13 @@ public class Palpite implements Serializable {
 		this.data_inclusao = data_inclusao;
 	}
 
-	public Long getResultado_IdResultado() {
-		return resultado_IdResultado;
+	public Resultado getResultado() {
+		return resultado;
 	}
 
-	public void setResultado_IdResultado(Long resultado_IdResultado) {
-		this.resultado_IdResultado = resultado_IdResultado;
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
 	}
-	
 
-	
 
 }

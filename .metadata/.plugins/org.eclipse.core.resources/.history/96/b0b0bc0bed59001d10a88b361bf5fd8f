@@ -1,6 +1,0 @@
-package com.odirlei.bolao.repositories;
-
-
-public interface TimeRepository extends JpaRepository<Time, Long>{
-
-}

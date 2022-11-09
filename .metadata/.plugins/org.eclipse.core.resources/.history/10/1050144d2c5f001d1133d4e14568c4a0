@@ -1,0 +1,11 @@
+package com.odirlei.bolao.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.odirlei.bolao.repositories.LogRepository;
+
+public class LogService {
+
+	@Autowired
+	private LogRepository logRepository;
+}

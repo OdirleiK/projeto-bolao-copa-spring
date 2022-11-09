@@ -1,0 +1,7 @@
+package com.odirlei.bolao.enums;
+
+public enum Resultado {
+	
+	Empate
+
+}

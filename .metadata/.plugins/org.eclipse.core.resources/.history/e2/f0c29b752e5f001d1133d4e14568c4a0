@@ -1,0 +1,14 @@
+package com.odirlei.bolao.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.odirlei.bolao.repositories.PalpiteRepository;
+
+@Service
+public class PalpiteService {
+	
+	@Autowired
+	private PalpiteRepository palpiteRepository;
+
+}

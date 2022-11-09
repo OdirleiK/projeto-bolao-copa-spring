@@ -1,0 +1,6 @@
+package com.odirlei.bolao.dto;
+
+public class FileDTO {
+
+	private Multipar
+}

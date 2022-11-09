@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "tb_palpite")
+@Table(name = "tb_log")
 public class Log implements Serializable {
 	private static final long serialVersionUID = 1L;
 	

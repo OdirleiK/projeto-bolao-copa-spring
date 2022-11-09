@@ -1,0 +1,14 @@
+package com.odirlei.bolao.dto;
+
+public class UriFileDTO {
+
+	private String uri;
+	
+	private UriFileDTO() {}
+
+	public UriFileDTO(String uri) {
+		this.uri = uri;
+	}
+	
+	
+}

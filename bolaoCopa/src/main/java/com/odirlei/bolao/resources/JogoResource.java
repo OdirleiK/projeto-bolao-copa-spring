@@ -26,7 +26,7 @@ public class JogoResource {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<JogoDTO> findByid(@PathVariable Long id) {
+	public ResponseEntity<JogoDTO> findById(@PathVariable Long id) {
 		JogoDTO dto = jogoService.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}

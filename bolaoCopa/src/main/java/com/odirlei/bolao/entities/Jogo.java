@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +18,7 @@ import javax.persistence.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.odirlei.bolao.enums.Resultado;
 
 @Entity
 @Table(name = "tb_jogo")
@@ -39,24 +42,18 @@ public class Jogo implements Serializable {
 	@JoinColumn(nullable = false, name = "id_time2")
 	private Long id_time2;
 	
-	@ManyToOne(targetEntity = Bolao.class, fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false, name = "id_bolao")
-	private Long id_bolao;
-	
-	@ManyToOne(targetEntity = Resultado.class, fetch = FetchType.EAGER)
-	@JoinColumn(nullable = false, name = "id_idResultado")
-	private Long resultado_IdResultado;
+	@Enumerated(EnumType.STRING)
+	private Resultado resultado;
 
 	public Jogo() {}
 
-	public Jogo(Long id, LocalDateTime data, Long id_time1, Long id_time2, Long id_bolao, Long resultado_IdResultado) {
+	public Jogo(Long id, LocalDateTime data, Long id_time1, Long id_time2, Resultado resultado) {
 		super();
 		this.id = id;
 		this.data = data;
 		this.id_time1 = id_time1;
 		this.id_time2 = id_time2;
-		this.id_bolao = id_bolao;
-		this.resultado_IdResultado = resultado_IdResultado;
+		this.resultado = resultado;
 	}
 
 	public Long getId() {
@@ -91,29 +88,13 @@ public class Jogo implements Serializable {
 		this.id_time2 = id_time2;
 	}
 
-	public Long getId_bolao() {
-		return id_bolao;
+	public Resultado getResultado() {
+		return resultado;
 	}
 
-	public void setId_bolao(Long id_bolao) {
-		this.id_bolao = id_bolao;
+	public void setResultado(Resultado resultado) {
+		this.resultado = resultado;
 	}
 
-	public Long getResultado_IdResultado() {
-		return resultado_IdResultado;
-	}
 
-	public void setResultado_IdResultado(Long resultado_IdResultado) {
-		this.resultado_IdResultado = resultado_IdResultado;
-	}
-	
-	
-
-	
-
-
-	
-	
-	
-	
 }

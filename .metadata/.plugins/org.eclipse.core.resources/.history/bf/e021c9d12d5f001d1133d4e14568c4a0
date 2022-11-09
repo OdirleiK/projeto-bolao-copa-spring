@@ -1,0 +1,16 @@
+package com.odirlei.bolao.dto;
+
+import java.time.LocalDateTime;
+
+import com.odirlei.bolao.entities.User;
+import com.odirlei.bolao.enums.Resultado;
+
+public class PalpiteDTO {
+
+	private Long id;
+	private Long jogo_id;
+	private User usuario_id;
+	private LocalDateTime data_inclusao;
+	private Resultado resultado;
+
+}
