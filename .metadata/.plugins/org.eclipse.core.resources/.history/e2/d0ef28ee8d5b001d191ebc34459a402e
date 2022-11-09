@@ -1,7 +1,0 @@
-package com.odirlei.bolao.components;
-
-import org.springframework.security.oauth2.provider.token.TokenEnhancer;
-
-public class JwtTokenEnhancer implements TokenEnhancer {
-	
-}

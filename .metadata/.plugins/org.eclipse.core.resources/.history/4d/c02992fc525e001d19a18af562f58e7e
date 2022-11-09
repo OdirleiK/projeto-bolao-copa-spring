@@ -1,6 +1,0 @@
-package com.odirlei.bolao.entities;
-@Entity
-
-public class PassowordResetToken {
-
-}

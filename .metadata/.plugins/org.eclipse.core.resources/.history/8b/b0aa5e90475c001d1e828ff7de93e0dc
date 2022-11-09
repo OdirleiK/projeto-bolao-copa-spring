@@ -1,5 +1,0 @@
-package com.odirlei.bolao.repositories;
-
-public interface EmailRespository {
-
-}
